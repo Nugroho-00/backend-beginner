@@ -24,7 +24,7 @@ let data = {
   email: "janedoe@mail.com"
 };
 
-app.patch("/profile", (requset, response) => {
+app.patch("/profile", (request, response) => {
   data = {
     ...data, ...request.body
   }
@@ -32,8 +32,8 @@ app.patch("/profile", (requset, response) => {
 })
 
 app.put("/profile", (request, response) => {
-  const { name, batch, email } = request.body
-  if (name && batch && email) {
+  const { nama, batch, email } = request.body
+  if (nama && batch && email) {
     data = {
       ...request.body
     }
@@ -46,7 +46,7 @@ app.put("/profile", (request, response) => {
   }
 })
 
-app.get("/profie", (request, response) => {
+app.get("/profile", (request, response) => {
   response.send(data)
 })
 
